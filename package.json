@@ -1,0 +1,25 @@
+{
+  "name": "devdacticAwsUpload",
+  "version": "1.0.0",
+  "description": "Backend for File upload to S3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Simon Reimler",
+  "homepage": "https://devdactic.com",
+  "dependencies": {
+    "aws-sdk": "^2.83.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "dotenv": "^0.4.0",
+    "errorhandler": "^1.1.1",
+    "express": "^4.14.0",
+    "helmet": "^3.1.0",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {}
+}
