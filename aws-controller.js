@@ -20,7 +20,7 @@ exports.uploadFile = function (req, res) {
         Bucket: secrets.aws_bucket,
         Key: fileName, // File name you want to save as in S3
 		ContentType: fileType,
-        Body: stringtowrite
+        Body: "hola"
     };
 	
 	s3.upload(params, function(err, data) {
