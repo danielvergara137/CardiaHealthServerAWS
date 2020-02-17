@@ -43,7 +43,7 @@ exports.uploadFile = function (req, res) {
 	
 	const params = {
         Bucket: secrets.aws_bucket,
-        Key: file-name, // File name you want to save as in S3
+        Key: fileName, // File name you want to save as in S3
         Body: stringtowrite
     };
 	
