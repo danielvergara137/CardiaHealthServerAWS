@@ -41,7 +41,18 @@ exports.uploadFile = function (req, res) {
 		else console.log('archivo creado');
 	});
 	
-	return http.put(reqUrl, file).json();
+	const params = {
+        Bucket: secrets.aws_bucket,
+        Key: file-name, // File name you want to save as in S3
+        Body: stringtowrite
+    };
+	
+	s3.upload(params, function(err, data) {
+        if (err) {
+            throw err;
+        }
+        console.log(`File uploaded successfully. ${data.Location}`);
+    });
 		
 };
  
