@@ -15,6 +15,7 @@ exports.uploadFile = function (req, res) {
     const fileType = req.query['file-type'];
 	var reqUrl = "";
 	const stringtowrite = req.body['content'];
+	console.log(req);
 	console.log(stringtowrite);
 	/*
 	const file = fs.writeFile(fileName, stringtowrite, function(err){
