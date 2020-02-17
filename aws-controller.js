@@ -13,7 +13,7 @@ const s3 = new aws.S3({
 exports.uploadFile = function (req, res) {
     const fileName = req.query['file-name'];
     const fileType = req.query['file-type'];
-	const reqUrl;
+	var reqUrl;
 	const stringtowrite = req.query['string-write']
     const s3Params = {
         Bucket: secrets.aws_bucket,
