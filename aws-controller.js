@@ -15,39 +15,15 @@ exports.uploadFile = function (req, res) {
     const fileType = req.query['file-type'];
 	var reqUrl;
 	const stringtowrite = req.query['string-write']
-    const s3Params = {
-        Bucket: secrets.aws_bucket,
-        Key:   fileName,
-        Expires: 60,
-        ContentType: fileType,
-        ACL: 'private'
-    };
-    
-    s3.getSignedUrl('putObject', s3Params, (err, data) => {
-        if (err) {
-            console.log(err);
-            return res.end();
-        }
-        const returnData = {
-            signedRequest: data,
-            url: `https://${secrets.aws_bucket}.s3.amazonaws.com/${fileName}`
-        };
- 
-        reqUrl = returnData['signedRequest']
-    });
-	
-	const file = fs.writeFile(fileName, stringtowrite, function(err){
-		if(err) console.log(err);
-		else console.log('archivo creado');
-	});
 	
 	const params = {
         Bucket: secrets.aws_bucket,
         Key: fileName, // File name you want to save as in S3
+		ContentType: fileType,
         Body: stringtowrite
     };
 	
-	s3.upload(params, function(err, data) {
+	return s3.upload(params, function(err, data) {
         if (err) {
             throw err;
         }
