@@ -14,7 +14,7 @@ exports.uploadFile = function (req, res) {
     const fileName = req.query['file-name'];
     const fileType = req.query['file-type'];
 	var reqUrl;
-	const stringtowrite = req.query['string-write']
+	const stringtowrite = req.body['content']
 	
 	const params = {
         Bucket: secrets.aws_bucket,
