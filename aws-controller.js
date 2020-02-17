@@ -13,6 +13,7 @@ const s3 = new aws.S3({
 exports.uploadFile = function (req, res) {
     const fileName = req.query['file-name'];
     const fileType = req.query['file-type'];
+	const reqUrl;
 	const stringtowrite = req.query['string-write']
     const s3Params = {
         Bucket: secrets.aws_bucket,
@@ -32,7 +33,7 @@ exports.uploadFile = function (req, res) {
             url: `https://${secrets.aws_bucket}.s3.amazonaws.com/${fileName}`
         };
  
-        const reqUrl = returnData['signedRequest']
+        reqUrl = returnData['signedRequest']
     });
 	
 	const file = fs.writeFile(fileName, stringtowrite, function(err){
