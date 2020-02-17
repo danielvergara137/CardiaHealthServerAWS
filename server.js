@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(errorhandler())
 }
  
-app.get('/aws/sign', awsController.uploadFile);
+app.post('/aws/upload', awsController.uploadFile);
  
 var port = process.env.PORT || 5000;
 var server = http.createServer(app);
