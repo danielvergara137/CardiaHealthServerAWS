@@ -23,10 +23,11 @@ exports.uploadFile = function (req, res) {
         Body: stringtowrite
     };
 	
-	return s3.upload(params, function(err, data) {
+	s3.upload(params, function(err, data) {
         if (err) {
             throw err;
         }
+		return true;
         console.log(`File uploaded successfully. ${data.Location}`);
     });
 		
