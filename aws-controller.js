@@ -28,6 +28,7 @@ exports.uploadFile = function (req, res) {
             throw err;
         }
         console.log(`File uploaded successfully. ${data.Location}`);
+		return true;
     });
 		
 };
