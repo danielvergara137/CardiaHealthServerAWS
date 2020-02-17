@@ -15,16 +15,7 @@ exports.uploadFile = function (req, res) {
     const fileType = req.query['file-type'];
 	var reqUrl = "";
 	const stringtowrite = req.body['content'];
-	console.log(req);
-	console.log(stringtowrite);
-	/*
-	const file = fs.writeFile(fileName, stringtowrite, function(err){
-		if(err) console.log(err);
-		else console.log('archivo creado');
-	});
-	
-	const fileContent = fs.readFileSync(fileName);
-	*/
+
 	const params = {
         Bucket: secrets.aws_bucket,
         Key:   fileName,
@@ -38,15 +29,6 @@ exports.uploadFile = function (req, res) {
         console.log("Successfully uploaded data");
 		res.send(req.body)
       });
-	  
-	
-	/*
-	s3.upload(params, function(err, data) {
-        if (err) {
-            throw err;
-        }
-        console.log(`File uploaded successfully. ${data.Location}`);
-    });*/
 		
 };
 
