@@ -27,7 +27,6 @@ exports.uploadFile = function (req, res) {
         if (err) {
             throw err;
         }
-		return true;
         console.log(`File uploaded successfully. ${data.Location}`);
     });
 		
