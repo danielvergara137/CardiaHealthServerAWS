@@ -7,7 +7,7 @@ var secrets = require('./secrets');
  
 const s3 = new aws.S3({
     signatureVersion: 'v4',
-    region: 'us-east-2' // Change for your Region, check inside your browser URL for S3 bucket ?region=...
+    region: 'sa-east-1' // Change for your Region, check inside your browser URL for S3 bucket ?region=...
 });
  
 exports.uploadFile = function (req, res) {
