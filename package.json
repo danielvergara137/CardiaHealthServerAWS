@@ -12,7 +12,7 @@
   "author": "Simon Reimler",
   "homepage": "https://devdactic.com",
   "dependencies": {
-    "aws-sdk": "^2.83.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "dotenv": "^0.4.0",
